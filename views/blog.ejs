@@ -1,0 +1,37 @@
+<% include layouts/header %>
+
+    <div class="ui centered header top"> <%= blog.title %> </div>
+    <div class="ui container" id="image">
+        <img class="ui attached segment image" src="<%= blog.image %>" alt="">
+    </div>
+    <div class="ui bottom attached centered container" id="article">
+        <div class="ui inverted piled attached segment"><%= blog.body %>
+        </div>
+        <div class="ui right floated bottom blue basic button">
+            <a href="/blogs/<%= blog._id %>/comments/new">Commentez!</a>
+        </div>
+    </div>    
+    <div class="ui container centered segment top" >
+        <div class="ui horizontal divider">
+            <i class="comment alternate outline icon"></i>
+        </div>
+        <% blog.comments.map((comment) => { %>
+                <div class="ui message"><%= comment.text%> - <strong> <%= comment.author %> </strong> </div> 
+
+        <% }) %> 
+    </div>
+    <div class="ui container"> 
+       <% if (currentUser){ %>
+        <div class="ui basic primary button">
+            <a href="/blogs/<%= blog.id %>/edit"> Modifier l' article </a>
+        </div>  
+        <form class="ui right floated" method="POST" action="/blogs/<%= blog._id %>?_method=DELETE" id="form">
+            <button class="ui basic red button right floated"> Supprimer l' article </button>  
+        </form>
+      <% } %>
+    </div>
+
+    
+        
+
+<% include layouts/footer %>

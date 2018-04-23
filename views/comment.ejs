@@ -1,0 +1,15 @@
+<% include layouts/header %>
+<div class="ui main text segment container">
+    <div class="ui huge header">Add Comment</div>
+    <form action="/blogs/<%= blog.id %>/comments" method="POST" class="ui form">
+        <div class="field">
+            <textarea type="text" name="comment[text]" placeholder="Enter comment" required/></textarea>
+        </div>
+        <div class="field">
+            <input type="text" name="comment[author]" placeholder="Votre nom" required/>
+        </div>
+        <button class="ui primary button">Add</button>
+    </form>
+    </div>
+</div>
+<% include layouts/footer %>

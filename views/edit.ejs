@@ -1,0 +1,17 @@
+<% include layouts/header.ejs %>
+<div class="ui main text segment container">
+    <div class="ui huge header">Modifier <%=blog.title%></div>
+        <form action="/blogs/<%= blog.id %>?_method=PUT" method="POST" class="ui form">
+            <div class="field">
+                <input type="text" name="title" value="<%= blog.title %>" required/>
+            </div>
+            <div class="field">
+                <input type="text" name="image" value="<%= blog.image %>" required/>
+            </div>
+            <div class="field">
+                <textarea name="body" value="" required><%= blog.body %></textarea>                
+            </div>
+            <button class="ui primary button">Modifier</button>
+        </form>
+</div>
+<%include layouts/footer.ejs %>

@@ -1,0 +1,21 @@
+
+
+.main.container {
+    margin-top: 7em;
+}
+
+.ui.centered.segment, #image, #article {
+    width: 60%;
+}
+
+.ui.top {
+    margin-top: 5em;
+}
+
+#form {
+    display: inline;
+}
+
+.ui.icon.comment.alternate {
+    font-size: 3em;
+}

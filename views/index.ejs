@@ -1,0 +1,21 @@
+<% include layouts/header %>
+<div class="ui centered container top" >
+    <h1 class="ui centered header">This is the blog page</h1>
+    <div class="ui four stackable cards visible">
+            <% blogs.map(blog => { %>
+                <div class="ui card">
+                    <a href="/blogs/<%=blog.id %>"><img class="ui  image" src="<%= blog.image %>"/></a>
+                    <div class="content">
+                        <a href="/blogs/<%=blog.id %>"><p class="ui header"><%= blog.title %></p></a>
+                        <div class="">
+                            <p> <%= blog.body.substring(0, 150) %>...</p>
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <span><%= blog.created.toDateString() %></span>
+                    </div>
+                </div>
+            <%})%>
+    </div>
+</div>
+<% include layouts/footer %>

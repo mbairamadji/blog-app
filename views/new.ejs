@@ -1,0 +1,17 @@
+<% include layouts/header %>
+    <div class="ui main text segment container">
+        <div class="ui huge header">Add new blog</div>
+            <form action="/blogs" method="POST" class="ui form">
+                <div class="field">
+                    <input type="text" name="title" placeholder="Enter title" required/>
+                </div>
+                <div class="field">
+                    <input type="text" name="image" placeholder="Image's url" required/>
+                </div>
+                <div class="field">
+                    <textarea name="body" placeholder="Enter description" required></textarea>                
+                </div>
+                <button class="ui primary button">Create</button>
+            </form>
+    </div>
+<% include layouts/footer %>
