@@ -9,8 +9,14 @@ const morgan     = require('morgan')
 const ejs        = require('ejs')
 const routes     = require('./routes')
 const app        = express()
+const dotenv     = require('dotenv')
 
-mongoose.connect('mongodb://dynamitt:dyn@ds117935.mlab.com:17935/kata')
+dotenv.config()
+mongoose.Promise = global.Promise
+
+mongoose.connect(process.env.MONGOLAB_URI).catch((reason) => {
+    console.log(reason)
+})
 
 app.set("view engine", "ejs")
 
